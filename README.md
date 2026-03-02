@@ -9,6 +9,14 @@ Selamat datang di repositori manajemen konfigurasi Kelompok 10. Proyek ini merup
     2. Nur Fajriyah - 3124522024
     3. Rahmatillah Niken Kurniawan - 3124522019
 
+## ✅ Status Implementasi (Modul 1)
+| Kriteria Sukses | Status | Bukti (Evidence) |
+| :--- | :---: | :--- |
+| SSH adm01 -> srv01 (No Password) | Done | `evidence/ssh_tests.txt` |
+| SSH adm01 -> cli01 (No Password) | Done | `evidence/ssh_cli_tests.txt` |
+| Ping Internal LAN (0% Loss) | Done | `evidence/ssh_tests.txt` |
+| Inventory & Policy Blueprint | Done | Folder `docs/` |
+| Change Log (Min. 3 Entry) | Done | `change_log.md` |
 ---
 
 ## 🌐 Topologi Jaringan
