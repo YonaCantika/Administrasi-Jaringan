@@ -14,7 +14,7 @@ Selamat datang di repositori manajemen konfigurasi Kelompok 10. Proyek ini merup
 | :--- | :---: | :--- |
 | SSH adm01 -> srv01 (No Password) | Done | `evidence/ssh_srv_tests.txt` |
 | SSH adm01 -> cli01 (No Password) | Done | `evidence/ssh_cli_tests.txt` |
-| Ping Internal LAN (0% Loss) | Done | `evidence/ssh_srv_tests.txt, ssh_cli_tests.txt` |
+| Ping Internal LAN (0% Loss) | Done | `evidence/ssh_srv_tests.txt,, ssh_cli_tests.txt` |
 | Inventory & Policy Blueprint | Done | Folder `docs/` |
 | Change Log (Min. 3 Entry) | Done | `docs/change_log.md` |
 ---
