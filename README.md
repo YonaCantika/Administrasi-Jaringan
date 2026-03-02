@@ -5,10 +5,9 @@ Selamat datang di repositori manajemen konfigurasi Kelompok 10. Proyek ini merup
 ## 📋 Profil Proyek
 * **Instansi:** Politeknik Elektronika Negeri Surabaya
 * **Anggota Kelompok:**
-    1. [Nama Kamu] - [NRP]
-    2. [Nama Teman] - [NRP]
-    3. [Nama Teman] - [NRP]
-* **Skenario:** [Opsi A: WSN/IoT Lab Kampus / Opsi B: Smart PKL]
+    1. Yona Cantika Damai Sari - 3124522001
+    2. Nur Fajriyah - 3124522024
+    3. Rahmatillah Niken Kurniawan - 3124522019
 
 ---
 
