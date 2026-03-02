@@ -1,16 +1,10 @@
-\# SSH Configuration Notes - Kelompok 10
-
-
+# SSH Configuration Notes - Kelompok 10
 
 Dokumen ini mencatat langkah-langkah pengerasan (\*hardening\*) layanan SSH pada `srv01` dan `cli01` sesuai dengan standar keamanan Modul 1.
 
-
-
-\## 1. Parameter Utama yang Diubah
+## 1. Parameter Utama yang Diubah
 
 Perubahan dilakukan pada file `/etc/ssh/sshd\_config` untuk memastikan akses hanya melalui jalur yang terotorisasi.
-
-
 
 | Parameter | Nilai Baru | Fungsi / Alasan |
 
@@ -26,7 +20,7 @@ Perubahan dilakukan pada file `/etc/ssh/sshd\_config` untuk memastikan akses han
 
 
 
-\## 2. Prosedur Implementasi
+## 2. Prosedur Implementasi
 
 Langkah-langkah yang dilakukan agar tidak terkunci (\*lockout\*):
 
@@ -42,13 +36,13 @@ Langkah-langkah yang dilakukan agar tidak terkunci (\*lockout\*):
 
 
 
-\## 3. Verifikasi Keamanan
+## 3. Verifikasi Keamanan
 
 Bukti bahwa konfigurasi berhasil:
 
-\* Mencoba login SSH langsung dari Laptop ke `srv01` -> \*\*Rejected\*\* (karena harus lewat `adm01`).
+* Mencoba login SSH langsung dari Laptop ke `srv01` -> \*\*Rejected\*\* (karena harus lewat `adm01`).
 
-\* Mencoba login sebagai `root` -> \*\*Permission Denied\*\*.
+* Mencoba login sebagai `root` -> \*\*Permission Denied\*\*.
 
 \* Login dari `adm01` ke `srv01` -> \*\*Langsung masuk (Success)\*\*.
 
