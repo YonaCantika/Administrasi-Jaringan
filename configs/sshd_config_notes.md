@@ -21,17 +21,17 @@ Langkah-langkah yang dilakukan agar tidak terkunci (**lockout**):
 
 1.  **Generate Key** Membuat pasangan kunci di `adm01` menggunakan `ssh-keygen`:
     ```bash
-    ssh-keygen -t ed25519 -C "admin-kelompok10"
+    ssh-keygen -t ed25519 -C "adm01@lab10"
     ```
 
 2.  **Distribusi Kunci** Mengirimkan kunci publik ke server target:
     ```bash
-    ssh-copy-id student@10.10.10.11
+    ssh-copy-id yona@10.10.10.11
     ```
 
 3.  **Uji Coba** Memastikan bisa login dari `adm01` ke `srv01` tanpa dimintai password:
     ```bash
-    ssh student@10.10.10.11
+    ssh yona@10.10.10.11
     ```
 
 4.  **Hardening** Setelah sukses, baru mengubah `PasswordAuthentication` menjadi `no` di `/etc/ssh/sshd_config`.
