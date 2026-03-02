@@ -1,0 +1,37 @@
+Script started on 2026-03-03 01:00:02+07:00 [COMMAND="ip a && ping -c 3 10.10.10.12 && ssh -o BatchMode=yes yona@10.10.10.12 'hostnamectl'" TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 08:00:27:14:08:b1 brd ff:ff:ff:ff:ff:ff
+3: enp0s8: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 08:00:27:5e:a1:72 brd ff:ff:ff:ff:ff:ff
+    inet 10.10.10.10/24 brd 10.10.10.255 scope global noprefixroute enp0s8
+       valid_lft forever preferred_lft forever
+    inet6 fe80::a00:27ff:fe5e:a172/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+PING 10.10.10.12 (10.10.10.12) 56(84) bytes of data.
+64 bytes from 10.10.10.12: icmp_seq=1 ttl=64 time=1.58 ms
+64 bytes from 10.10.10.12: icmp_seq=2 ttl=64 time=4.43 ms
+64 bytes from 10.10.10.12: icmp_seq=3 ttl=64 time=11.5 ms
+
+--- 10.10.10.12 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2004ms
+rtt min/avg/max/mdev = 1.578/5.848/11.536/4.187 ms
+ Static hostname: cli01
+       Icon name: computer-vm
+         Chassis: vm 🖴
+      Machine ID: 3647aff1f42a436a901bc16d994b5a91
+         Boot ID: fe065fdfc71449f9bb6baf872ed57f4d
+  Virtualization: oracle
+Operating System: Debian GNU/Linux 12 (bookworm)
+          Kernel: Linux 6.1.0-43-amd64
+    Architecture: x86-64
+ Hardware Vendor: innotek GmbH
+  Hardware Model: VirtualBox
+Firmware Version: VirtualBox
+
+Script done on 2026-03-03 01:00:05+07:00 [COMMAND_EXIT_CODE="0"]
