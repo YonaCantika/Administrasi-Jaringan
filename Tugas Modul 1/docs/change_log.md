@@ -1,41 +1,60 @@
 # Change Log - Kelompok 10
 
-## [2026-03-02] - Setup Keamanan SSH
+Dokumen ini mencatat riwayat perubahan konfigurasi pada infrastruktur lab Modul 1.
+
+## [2026-03-03] - Inisialisasi Repositori & Struktur Folder
+**Perubahan:**
+- Membuat repositori Git lokal di `adm01`.
+- Membuat struktur folder: `docs/`, `configs/`, dan `evidence/`.
+- Menambahkan file `README.md` dan `.gitignore`.
+
+**Alasan:**
+- Menerapkan Meta-Principle **"Knowledge as Jigsaw"** dan **"Repeatability"**. Dokumentasi terpusat di Git memastikan seluruh anggota kelompok memiliki informasi yang sama dan konfigurasi dapat diulang jika terjadi kegagalan sistem.
+
+**Hasil:**
+- Struktur proyek siap digunakan untuk menyimpan artefak PBL lainnya.
+
+---
+
+## [2026-03-03] - Konfigurasi Addressing & Hostname (Identity)
+**Perubahan:**
+- Mengubah hostname di `/etc/hostname` menjadi `adm01`, `srv01`, dan `cli01`.
+- Mengatur IP Statik pada interface LAN (enp0s8) di file `/etc/network/interfaces`:
+  - adm01: 10.10.10.10
+  - srv01: 10.10.10.11
+  - cli01: 10.10.10.12
+
+**Alasan:**
+- Memenuhi standar **Identity Host** (Bab 3 Burgess). IP statik diperlukan agar layanan komunikasi antar VM tidak terputus akibat perubahan IP dinamis (DHCP) pada jaringan internal.
+
+**Hasil:**
+- Seluruh VM dapat saling terhubung (ping sukses 0% loss) menggunakan IP yang konsisten sesuai Policy Blueprint.
+
+---
+
+## [2026-03-03] - Hardening Akses SSH (Security Baseline)
 **Perubahan:**
 - File: `/etc/ssh/sshd_config`
-- Parameter: `PermitRootLogin` diubah dari `yes` menjadi `no`
-- Parameter: `PasswordAuthentication` diubah dari `yes` menjadi `no`
+- Aksi: 
+  - `PermitRootLogin` diubah ke `no`.
+  - `PasswordAuthentication` diubah ke `no`.
+  - Mengaktifkan `PubkeyAuthentication yes`.
 
 **Alasan:**
-- Menjalankan standar keamanan Modul 1 untuk mencegah akses root langsung dan mewajibkan penggunaan SSH Key dari `adm01`.
+- **Risk Mitigation**: Mencegah serangan *brute force* pada akun root dan user biasa. Akses admin kini hanya diizinkan melalui SSH Key yang sudah terdaftar di `authorized_keys`.
 
 **Hasil:**
-- User `root` tidak bisa lagi login via SSH.
-- Akses ke `srv01` hanya bisa dilakukan oleh user `student` melalui `adm01` menggunakan kunci (Key-based auth).
-- Perintah diterapkan dengan: `sudo systemctl restart ssh`.
+- Akses ke `srv01` dan `cli01` hanya bisa dilakukan secara aman dari `adm01`. Login menggunakan password ditolak oleh sistem.
 
 ---
 
-## [2026-03-02] - Konfigurasi IP Statik LAN
+## [2026-03-03] - Pembuatan Bukti Uji (Evidence Generation)
 **Perubahan:**
-- File: `/etc/network/interfaces` atau menggunakan `nmcli`.
-- Konfigurasi: Menetapkan IP `10.10.10.11` pada interface LAN (enp0s8).
+- Menjalankan perintah `script` untuk merekam hasil uji konektivitas dan login SSH.
+- Menyimpan output ke `evidence/ssh_tests.txt`.
 
 **Alasan:**
-- Memastikan alamat IP server tetap (statik) sesuai standar lab agar bisa saling ping antar VM.
+- Memenuhi syarat **Audit & Verification** pada Modul 1 halaman 9. Tanpa bukti uji, klaim keberhasilan sistem tidak dapat divalidasi oleh instruktur.
 
 **Hasil:**
-- VM `srv01` sukses melakukan ping ke `adm01` (10.10.10.10) dan `cli01` (10.10.10.12).
-
----
-
-## [2026-03-02] - Inisialisasi Repositori Git Kelompok
-**Perubahan:**
-- Membuat repositori lokal dan menghubungkannya ke GitHub.
-- Menyusun struktur folder `docs/`, `configs/`, dan `evidence/`.
-
-**Alasan:**
-- Memenuhi prasyarat artefak PBL Modul 1 untuk manajemen konfigurasi dan dokumentasi yang terpusat.
-
-**Hasil:**
-- Dokumentasi `inventory_v0` dan `policy_blueprint_v0` tersimpan dan bisa diakses oleh seluruh anggota kelompok.
+- File log tersedia di repositori sebagai bukti fisik bahwa sistem berjalan sesuai kebijakan (Policy-based).
