@@ -1,0 +1,11 @@
+subnet 10.20.1.0 netmask 255.255.255.0 {
+  range 10.20.1.50 10.20.1.100;
+  option routers 10.20.1.1;
+  option domain-name "lab1.local";
+  option domain-name-servers 10.20.1.1;
+}
+
+host cli01 {
+  hardware ethernet 08:00:27:xx:xx:xx;
+  fixed-address 10.20.1.10;
+}

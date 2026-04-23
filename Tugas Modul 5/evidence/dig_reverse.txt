@@ -1,0 +1,47 @@
+root@cli01:~# dig -x 10.20.1.1
+
+; <<>> DiG 9.18.47-1~deb12u1-Debian <<>> -x 10.20.1.1
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NXDOMAIN, id: 44373
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: c54c07fd89d50ee30100000069ea877b1f55accf1da7a115 (good)
+;; QUESTION SECTION:
+;1.1.20.10.in-addr.arpa.                IN      PTR
+
+;; AUTHORITY SECTION:
+10.IN-ADDR.ARPA.        86400   IN      SOA     10.IN-ADDR.ARPA. . 0 28800 7200 604800 86400
+
+;; Query time: 8 msec
+;; SERVER: 10.20.1.1#53(10.20.1.1) (UDP)
+;; WHEN: Fri Apr 24 03:56:26 +07 2026
+;; MSG SIZE  rcvd: 129
+
+root@cli01:~#
+
+----------------------------------------------------------------------------------------------------
+
+root@adm01:~# dig -x 10.20.1.1
+
+; <<>> DiG 9.18.47-1~deb12u1-Debian <<>> -x 10.20.1.1
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NXDOMAIN, id: 44373
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: c54c07fd89d50ee30100000069ea877b1f55accf1da7a115 (good)
+;; QUESTION SECTION:
+;1.1.20.10.in-addr.arpa.                IN      PTR
+
+;; AUTHORITY SECTION:
+10.IN-ADDR.ARPA.        86400   IN      SOA     10.IN-ADDR.ARPA. . 0 28800 7200 604800 86400
+
+;; Query time: 8 msec
+;; SERVER: 10.20.1.1#53(10.20.1.1) (UDP)
+;; WHEN: Fri Apr 24 03:56:26 +07 2026
+;; MSG SIZE  rcvd: 129

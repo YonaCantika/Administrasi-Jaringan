@@ -1,0 +1,9 @@
+zone "lab1.local" {
+    type master;
+    file "/etc/bind/db.lab1.local";
+};
+
+zone "1.20.10.in-addr.arpa" {
+    type master;
+    file "/etc/bind/db.10.20.1";
+};
