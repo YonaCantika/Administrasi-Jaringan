@@ -1,0 +1,20 @@
+server {
+    listen 80;
+    listen 443 ssl;
+    server_name app.lab1.local;
+
+    ssl_certificate /etc/nginx/ssl/app.crt;
+    ssl_certificate_key /etc/nginx/ssl/app.key;
+
+    access_log /var/log/nginx/app_access.log;
+    error_log /var/log/nginx/app_error.log;
+
+    add_header X-Content-Type-Options nosniff;
+    add_header X-Frame-Options DENY;
+
+    location / {
+        proxy_pass http://127.0.0.1:9000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}

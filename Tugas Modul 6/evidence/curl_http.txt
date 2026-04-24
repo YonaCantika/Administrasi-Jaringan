@@ -1,0 +1,5 @@
+yona@cli01:~$ curl http://portal.lab1.local
+<h1>Portal Server</h1>
+
+yona@cli01:~$ curl http://app.lab1.local
+Backend App Running
